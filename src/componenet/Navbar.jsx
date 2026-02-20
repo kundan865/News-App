@@ -12,8 +12,8 @@ const Navbar = ({ className }) => {
     const handleSearch = async () => {
         if (!searchValue) return;
         const data = await fetchNews(`/everything?q=${searchValue}`)
-        if (!data.articles) return;
-        setNews(data.articles);
+        if (!data) return;
+        setNews(data);
         setSearchvalue('');
     }
 

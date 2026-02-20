@@ -6,25 +6,29 @@ const NewsContext = createContext();
 const NewsContextProvider = ({ children }) => {
     const [news, setNews] = useState([]);
     const [loading, setLoading] = useState(false);
-    const api_key = import.meta.env.VITE_NEWS_API_KEY
-
+    const api_key = import.meta.env.VITE_NEWS_API_KEY;
 
     const fetchNews = async (url = "/everything?q=india") => {
         setLoading(true);
-
         try {
-            const response = await api.get(`${url}&apiKey=${api_key}`)
-            setLoading(false);
-
-            return response.data
+            const response = await api.get(`${url}&apiKey=${api_key}`); // call your backend
+            if (response.data && response.data.articles) {
+                setNews(response.data.articles); // update state
+                return response.data.articles;
+            } else {
+                setNews([]);
+                return null;
+            }
         } catch (error) {
+            console.error("Failed to fetch news:", error.message);
+            setNews([]);
+        } finally {
             setLoading(false);
-            console.log(error);
         }
     }
 
     const value = {
-        news, setNews, fetchNews,loading
+        news, setNews, fetchNews, loading
     }
 
     return (

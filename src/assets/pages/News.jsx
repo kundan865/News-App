@@ -18,7 +18,7 @@ function News({ className }) {
     useEffect(() => {
         (async () => {
             const data =await fetchNews()
-            setNews(data.articles)
+            setNews(data)
         })()
 
     }, [])
