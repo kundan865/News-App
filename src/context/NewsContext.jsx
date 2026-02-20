@@ -14,10 +14,8 @@ const NewsContextProvider = ({ children }) => {
             const response = await api.get(`${url}&apiKey=${api_key}`); // call your backend
             if (response.data && response.data.articles) {
                 setNews(response.data.articles); // update state
-                return response.data.articles;
             } else {
                 setNews([]);
-                return null;
             }
         } catch (error) {
             console.error("Failed to fetch news:", error.message);

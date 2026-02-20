@@ -4,15 +4,14 @@ import { useNewsContext } from '../context/NewsContext'
 
 const Category = ({ className }) => {
 
-    const {news,setNews,fetchNews}= useNewsContext();
+    const { news, setNews, fetchNews } = useNewsContext();
 
 
-    const categories = ["business","entertainment","general",
-         "health", "science", "sports", "technology"]
+    const categories = ["business", "entertainment", "general",
+        "health", "science", "sports", "technology"]
 
-    const handleClick=async (category)=>{
-        const data= await fetchNews(`/everything?q=${category}`)
-        setNews(data.articles);
+    const handleClick = (category) => {
+        fetchNews(`/everything?q=${category}`)
     }
 
 
@@ -24,8 +23,8 @@ const Category = ({ className }) => {
                         categories.map((category, index) => {
                             return (
                                 <div key={index}>
-                                    <button onClick={()=>handleClick(category)}
-                                     className="btn btn-primary">{category}</button>
+                                    <button onClick={() => handleClick(category)}
+                                        className="btn btn-primary">{category}</button>
                                 </div>
                             )
                         })

@@ -6,14 +6,12 @@ import { FaSearch } from 'react-icons/fa';
 const Navbar = ({ className }) => {
 
     const [searchValue, setSearchvalue] = useState('');
-    const { setNews, fetchNews } = useNewsContext();
+    const { fetchNews } = useNewsContext();
 
 
-    const handleSearch = async () => {
+    const handleSearch = () => {
         if (!searchValue) return;
-        const data = await fetchNews(`/everything?q=${searchValue}`)
-        if (!data) return;
-        setNews(data);
+        fetchNews(`/everything?q=${searchValue}`)
         setSearchvalue('');
     }
 
