@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Wrapper from './Wrapper'
+import Wrapper from './Wrapper';
 import { useNewsContext } from '../context/NewsContext';
-import { FaSearch, FaSearchMinus } from 'react-icons/fa';
+import { FaSearch } from 'react-icons/fa';
 
 const Navbar = ({ className }) => {
 

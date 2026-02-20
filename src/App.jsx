@@ -1,11 +1,8 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Navbar from './componenet/Navbar'
-import News from './assets/pages/News'
-import Category from './componenet/Category'
-import Footer from './componenet/Footer'
+import Navbar from './componenets/Navbar'
+import Category from './componenets/Category'
+import Footer from './componenets/Footer'
+import News from './pages/News'
 
 function App() {
 

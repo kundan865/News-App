@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react'
-import Wrapper from '../../componenet/Wrapper'
-import NewsCard from '../../componenet/NewsCard'
-import axios from 'axios'
-import api from '../../config/axios'
-import { useNewsContext } from '../../context/NewsContext'
-import Loader from '../../componenet/Loader';
+import Wrapper from '../componenets/Wrapper';
+import NewsCard from '../componenets/NewsCard';
+import { useNewsContext } from '../context/NewsContext';
+import Loader from '../componenets/Loader';
 
 
 function News({ className }) {
