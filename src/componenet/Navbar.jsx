@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Wrapper from './Wrapper'
-import { useSelector } from 'react-redux'
 import { useNewsContext } from '../context/NewsContext';
 import { FaSearch, FaSearchMinus } from 'react-icons/fa';
 
